@@ -1,12 +1,15 @@
 package umg.progra3.listas;
 
-import java.awt.*;
-import java.util.Collections;
-import java.util.LinkedList;
+import umg.progra3.listas.doblementeEnlazada.DoblementeEnlazada;
+
 
 public class Principal {
     public static void main(String[] args) {
+        // listaEnlazadaSimple();
+        listaEnlazadaDoble();
+    }
 
+    public static void listaEnlazadaSimple(){
         Lista lista = new Lista();
         lista.insertarCabezaLista(4);
         lista.insertarCabezaLista(14);
@@ -108,6 +111,32 @@ public class Principal {
         listaPares.visualizar();
         System.out.println("\nLista impares");
         listaImpares.visualizar();
+    }
+
+    public static void listaEnlazadaDoble(){
+        DoblementeEnlazada dll = new DoblementeEnlazada();
+        dll.insertAtEnd(10);
+        dll.insertAtEnd(20);
+        dll.insertAtEnd(30);
+        dll.insertAtBeginning(12);
+        dll.insertAtBeginning(15);
+
+
+        System.out.println("Lista en orden:");
+        dll.displayForward();
+        System.out.println("Tamaño: "+ dll.zice());
+
+        dll.insertAfterValue(15,16);
+        System.out.println("Insertando dato:");
+        dll.displayForward();
+        System.out.println("Tamaño: "+ dll.zice());
+
+        dll.reverseList();
+        System.out.println("Lista invertida:");
+        dll.displayForward();
+
+        System.out.println("Buscando 16: "+ dll.search(16));
+
 
 
 
